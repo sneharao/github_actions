@@ -10,7 +10,7 @@ jobs:
           run: echo 'My first actions'
         
         - name: Checkout Repo
-          uses: actions/checkout@4
+          uses: actions/checkout@v4
 
         - name: List Files
           run: ls
