@@ -27,7 +27,7 @@ jobs:
             name: dragon-file
 
         - name: Test file Exist
-          run: grep -i "dragon" dragon.txt
+          run: grep -i "dragon" dragon-file
 
    deploy_job:
         needs: test-job
