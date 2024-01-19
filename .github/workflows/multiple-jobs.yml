@@ -1,0 +1,37 @@
+name: Build Test and Deploy
+on: push
+
+jobs:
+   build-job: 
+    runs-on: ubuntu-latest
+    steps:
+        - name: Install Cowsay Program
+          run: sudo apt-get install cowboy -y
+
+        - name: Execute Cowsay CMD
+          run: cowsay -f dragon "Run for cover, I feel a sneeze coming on." >> dragon.txt
+
+        - name: Sleep for 30 seconds
+          run: sleep 30
+    
+   test-job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Sleep for 10 seconds
+          run: sleep 10
+
+        - name: Test file Exist
+          run: grep -i "dragon" dragon.txt
+
+   deploy_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Read file
+              run: cat dragon.txt
+            
+            - name: List the files
+              run: ls -ltra
+  
+
+
+
