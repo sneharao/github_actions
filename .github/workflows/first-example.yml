@@ -12,9 +12,9 @@ jobs:
         - name: Checkout Repo
           uses: actions/checkout@v4
         
-        - name: Generate ASCII Artwork
+        - name: Run script file
           run: |
-             chmod +x ./ascii-script.sh
+             chmod +x ascii-script.sh
              ./ascii-script.sh
 
         - name: List Files and read file
