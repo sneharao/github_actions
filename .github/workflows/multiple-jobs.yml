@@ -27,7 +27,7 @@ jobs:
             name: dragon-file
 
         - name: Test file Exist
-          run: grep -i "dragon" dragon-file
+          run: grep -i "dragon" dragon.txt
 
    deploy_job:
         needs: test-job
@@ -39,7 +39,7 @@ jobs:
                 name: dragon-file
 
             - name: Read file
-              run: cat dragon-file
+              run: cat dragon.txt
             
             - name: List the files
               run: ls -ltra
