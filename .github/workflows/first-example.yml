@@ -11,14 +11,18 @@ jobs:
         
         - name: Checkout Repo
           uses: actions/checkout@v4
+        
+        - name: Generate ASCII Artwork
+          run: |
+             chmod +x ascii-script.sh
+             ./ascii-script.sh
 
         - name: List Files and read file
           run: |
              ls -ltra
              cat README.md
 
-        - name: Generate ASCII Artwork
-          run: cowsay -f dragon "Run for cover, I am a DRAGON....ARAWWW, THUSS THUSS" >> dragon.txt
+       
 
         # - name: Read file
         #   run: cat README.md
